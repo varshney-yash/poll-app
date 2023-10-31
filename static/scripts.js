@@ -18,7 +18,7 @@ function createPoll() {
             document.getElementById("response").innerHTML = data.message;
             const redirectLink = document.getElementById("redirect");
             redirectLink.style.display = "block";
-            redirectLink.href = 'localhost:8000/polls/' + data.poll_slug;
+            redirectLink.href = 'https://poll-app-alpha.vercel.app/polls/' + data.poll_slug;
         })
         .catch(error => console.error(error));
 }
