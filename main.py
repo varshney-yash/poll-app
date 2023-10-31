@@ -110,7 +110,7 @@ class ClickUpdate(BaseModel):
     count: int
 
 manager = ConnectionManager()
-@app.websocket("/ws/")
+@app.websocket("/wss/")
 async def websocket_endpoint(websocket: WebSocket):
     # await websocket.accept() 
     await manager.connect(websocket)
