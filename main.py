@@ -132,4 +132,4 @@ async def websocket_endpoint(websocket: WebSocket):
             # Send the updated count to all connected clients
             await manager.send_to_all(str(count))
     except WebSocketDisconnect:
-        pass
+        pass 
