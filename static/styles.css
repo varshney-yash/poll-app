@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0FFF0; /* Light green background */
+}
+h1 {
+    color: #228B22; /* Forest Green */
+    text-align: center;
+}
+#poll-form {
+    background-color: #FFFFFF; /* White */
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #228B22; /* Forest Green */
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #228B22; /* Forest Green */
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #228B22; /* Forest Green */
+    border-radius: 5px;
+}
+button {
+    background-color: #228B22; /* Forest Green */
+    color: #FFFFFF; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #2E8B57; /* Sea Green */
+}
+#response {
+    text-align: center;
+    margin-top: 10px;
+    color: #228B22; /* Forest Green */
+}
+
+#redirect {
+    text-align: center;
+    margin-top: 10px;
+    color: #228B22; /* Forest Green */
+}
+
+.poll-option {
+    background-color: #228B22; /* Forest Green */
+    color: #FFFFFF; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+    display: block; /* Make buttons display as block to stack vertically */
+    width: 100%; /* Expand buttons to the full width */
+    text-align: center; /* Center align text within buttons */
+}
+
+.poll-option:hover {
+    background-color: #2E8B57; /* Sea Green */
+    opacity: 0.8; /* Reduce opacity on hover */
+    transform: scale(1.05); /* Add a slight scale-up animation on hover */
+}
+
+h2 {
+    font-size: 24px;
+    color: #228B22; /* Forest Green */
+    text-align: center; /* Center align the title */
+}
