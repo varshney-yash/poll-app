@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>{{ poll.title }}</title>
+</head>
+<body>
+    <h2>{{ poll.title }}</h2>
+    <div>
+        {% for option in poll.options %}
+            <button class="poll-option">{{ option }}</button>
+        {% endfor %}
+    </div>
+</body>
+</html>
