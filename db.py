@@ -11,7 +11,10 @@ username = os.environ.get('mongo-username')
 passw = os.environ.get('mongo-password')
 
 
-username = urllib.parse.quote_plus(username)
-passw = urllib.parse.quote_plus(passw)
+username_bytes = username.encode('utf-8')
+passw_bytes = passw.encode('utf-8')
+
+username_encoded = urllib.parse.quote_plus(username_bytes)
+passw_encoded = urllib.parse.quote_plus(passw_bytes)
 
 uri = f"mongodb+srv://{username}:{passw}@cluster0.wvqfpmi.mongodb.net/?retryWrites=true&w=majority"
