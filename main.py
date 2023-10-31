@@ -1,32 +1,24 @@
-from time import time
-from fastapi import FastAPI, __version__
+from fastapi import FastAPI, HTTPException, Request
+from motor.motor_asyncio import AsyncIOMotorClient
+from db import uri
+from models import Poll,Voters,Votes
+from bson import ObjectId
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+import slugify
+
 
 app = FastAPI()
 
-html = f"""
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>FastAPI on Vercel</title>
-        <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-    </head>
-    <body>
-        <div class="bg-gray-200 p-4 rounded-lg shadow-lg">
-            <h1>Hello from FastAPI@{__version__}</h1>
-            <ul>
-                <li><a href="/docs">/docs</a></li>
-                <li><a href="/redoc">/redoc</a></li>
-            </ul>
-            <p>Powered by <a href="https://vercel.com" target="_blank">Vercel</a></p>
-        </div>
-    </body>
-</html>
-"""
+templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
-async def root():
-    return HTMLResponse(html)
+MONGO_URI = uri
+client = AsyncIOMotorClient(MONGO_URI)
+db = client["Polling"]
+users = db["voters"]
+polls = db['polls']
 
 @app.get('/ping')
 async def hello():
