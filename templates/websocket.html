@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Click Counter</title>
+</head>
+<body>
+    <h1>Click Counter</h1>
+    <button id="click-button">Click Me</button>
+    <div id="click-count">0</div>
+    <script>
+        const socket = new WebSocket("ws://localhost:8000/ws/");
+
+        socket.onmessage = (event) => {
+            // Update the click count display
+            const clickCount = event.data;
+            document.getElementById("click-count").textContent = clickCount;
+        };
+
+        document.getElementById("click-button").addEventListener("click", () => {
+            // Send a click event to the server
+            socket.send("click");
+        });
+    </script>
+</body>
+</html>
