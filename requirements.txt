@@ -48,3 +48,4 @@ watchfiles==0.21.0
 websockets==12.0
 wsproto==1.2.0
 yarl==1.9.2
+fastapi-sessions==0.3.2
