@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/whoami/')
         .then(response => {
             if (response.status === 403) {
-                submitBtn.disabled = true;
                 alert("Please enter your name to create a poll");
             } else {
                 return response.json().then(data => {
