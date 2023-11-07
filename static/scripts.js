@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Please enter your name to create a poll");
             } else {
                 return response.json().then(data => {
+                    submitBtn.disabled = false;
                     const modal = document.getElementById('modal');
                     modal.style.display = 'none';
                     alert(`Welcome back! ${data.username}`);
