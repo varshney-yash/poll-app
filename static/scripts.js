@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 function enterName() {
+    const submitBtn = document.getElementById('poll-data-submit');
     const nameInput = document.getElementById('nameInput').value;
     if (nameInput.trim() !== '') {
         const data = {
@@ -59,6 +60,7 @@ function enterName() {
             if (response.ok) {
                 const modal = document.getElementById('modal');
                 modal.style.display = 'none';
+                submitBtn.disabled = false;
                 location.reload();
             } else {
                 console.error('Error creating session');
