@@ -59,6 +59,7 @@ function enterName() {
             if (response.ok) {
                 const modal = document.getElementById('modal');
                 modal.style.display = 'none';
+                location.reload();
             } else {
                 console.error('Error creating session');
             }
