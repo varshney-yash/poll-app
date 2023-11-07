@@ -211,8 +211,10 @@ async def create_session(name: str, response: Response):
     return f"created session for {name}"
 
 
-@app.get("/whoami", dependencies=[Depends(cookie)])
+@app.get("/whoami/", dependencies=[Depends(cookie)])
 async def whoami(session_data: SessionData = Depends(verifier)):
+    if not session_data:
+        return None
     return session_data
 
 
